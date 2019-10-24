@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './Components/Nav/Nav'
 import routes from './routes'
+import 'reset-css'
 
 
 

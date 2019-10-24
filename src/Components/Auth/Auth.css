@@ -1,0 +1,45 @@
+.register-page{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, #FF75A0, #FF9771,#F0F571);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.register-form{
+    height: 55vh;
+    width: 35vw;
+    background-image: linear-gradient(to right, #FF806F, #FFCE71);
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+    
+}
+.register-form h1 {
+    color: white;
+    align-self: center;
+    font-size: 70px;
+    font-family: Impact, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+.inputs{
+    margin: 10px;
+}
+
+.auth-btns{
+    height: 33px;
+    width: 80px;
+    border-radius: 2px;
+    background-image: radial-gradient(rgb(95, 95, 95), rgb(68, 68, 68));
+    color: white;
+    margin: 20px;
+    font-size: 14px;
+}
+

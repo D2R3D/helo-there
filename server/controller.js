@@ -1,8 +1,6 @@
 const bcrypt = require('bcryptjs')
 
     
-   
-
    const register = async(req,res) => {
        const db = req.app.get('db')
        const {username, password, profile_pic} = req.body
@@ -38,8 +36,9 @@ const bcrypt = require('bcryptjs')
         if(authedPassword) {
             delete foundUser[0].password;
             req.session.userid = foundUser[0].id;
-    
-            res.status(200).send(foundUser[0]); 
+            const user = foundUser[0]
+            req.session.user = {user}
+            res.status(200).send({message: 'Welcome Back', user: req.session.user, loggedIn: true}); 
         }
         else {
             res.status(401).send('Username or Password incorrect, please try again.'); 

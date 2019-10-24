@@ -3,7 +3,8 @@ import axios from "axios";
 // import swal from "sweetalert2";
 import { connect } from "react-redux";
 import { updateUser } from "../../ducks/reducer";
-// import Nav from '../Nav/Nav'
+import './Auth.css'
+import logo from './../../assets/Helo.png'
 
 class Auth extends Component {
   constructor(props) {
@@ -33,27 +34,41 @@ login = async () => {
    const res = await axios.post('/auth/login', {username, password})
    this.props.updateUser(res.data.user)
    this.props.history.push('/dashboard')
+
 }
 
 
   render() {
     return (
-      <div>
+      <div className ='register-page'>
 
-        <p> Username</p>
-        <input
+      <div className='register-form'>
+     
+     <div>  
+       <img src ={logo} alt='logo-img' ></img>
+        <h1> Helo </h1>
+        </div>  
+
+        <div>
+        <p> Username: <span>
+        <input className ='inputs'
           value={this.state.username}
           onChange={e => this.handleChange(e, "username")}
-        ></input>
-        <p> Password </p>
-        <input
+        ></input> </span> </p>
+        <p> Password:  <span>
+        <input className ='inputs'
           type='password'
           value={this.state.password}
           onChange={e => this.handleChange(e, "password")}
-        ></input>
+        ></input> </span> </p>
+
+</div>
+
         <div>
-          <button onClick={this.login}> login </button>
-         <button onClick={this.register}> register </button>
+          <button className ='auth-btns' onClick={this.login}> Login </button>
+         <button className ='auth-btns' onClick={this.register}> Register </button>
+
+        </div>
         </div>
       </div>
     );
